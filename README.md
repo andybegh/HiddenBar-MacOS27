@@ -53,3 +53,7 @@ defaults write com.andybegh.HiddenBar hideWithMixedDisplays -bool true
 Read [CONTRIBUTING.md](CONTRIBUTING.md) before contributing.
 
 ## License
+
+MIT © 2026 Andrea Beghè. See [LICENSE](LICENSE) for the full license and required
+notices from earlier versions. Third-party notices are in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
