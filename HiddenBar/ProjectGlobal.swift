@@ -2,8 +2,8 @@
 //  Global.swift
 //  Hidden Bar
 //
-//  Created by 上原葉 on 5/16/23.
-//  Copyright © 2023 Dwarves Foundation. All rights reserved.
+//  Maintained by Andrea Beghè in 2026.
+//  Copyright © 2026 Andrea Beghè. Licensed under the MIT License.
 //
 
 import Foundation
@@ -11,5 +11,5 @@ import Foundation
 enum Global {
     // Global Variables for Project
     static let appName = "Minimal Bar"
-    static let mainAppId = "moe.ueharayou.MinimalBar"
+    static let mainAppId = "com.andybegh.HiddenBar"
 }

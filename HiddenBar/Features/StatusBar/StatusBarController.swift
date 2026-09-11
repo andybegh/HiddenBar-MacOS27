@@ -1,9 +1,9 @@
 //
 //  StatusBarController.swift
-//  vanillaClone
+//  Hidden Bar
 //
-//  Created by Thanh Nguyen on 1/30/19.
-//  Copyright © 2019 Dwarves Foundation. All rights reserved.
+//  Maintained by Andrea Beghè in 2026.
+//  Copyright © 2026 Andrea Beghè. Licensed under the MIT License.
 //
 
 import AppKit
@@ -26,7 +26,41 @@ class StatusBarController {
     
     private static let hiddenSepratorLength: CGFloat =  0
     private static let normalSepratorLength: CGFloat =  10
-    private static let expandedSeperatorLength: CGFloat = 10000
+    private static var expandedSeperatorLength: CGFloat {
+        let screenWidths = NSScreen.screens.map { $0.frame.width }
+
+        if #available(macOS 27.0, *) {
+            // macOS 27 discards a status item whose requested length reaches
+            // half of a display's width. Staying just below that limit lets the
+            // system move displaced items into its native overflow menu.
+            let narrowestWidth = screenWidths.min() ?? 1728
+            let widestWidth = screenWidths.max() ?? narrowestWidth
+
+            // A status item has one length even though the menu bar is mirrored
+            // across displays. With mixed display widths there is no value that
+            // both hides on the narrowest display and leaves wider bars intact.
+            // Default to normal-length, glyph-free separators so collapse is
+            // effectively disabled without destabilizing item ordering; advanced
+            // users can opt in to hiding on the narrowest display.
+            if widestWidth > narrowestWidth && !Preferences.hideWithMixedDisplays {
+                return normalSepratorLength
+            }
+
+            // On very wide displays, the distance that must be displaced is
+            // already larger than macOS 27's per-item half-width limit. Avoid
+            // shifting every icon when a full collapse is impossible.
+            if narrowestWidth > 2_800 {
+                return normalSepratorLength
+            }
+
+            return max(200, (narrowestWidth / 2 - 64).rounded(.down))
+        }
+
+        // macOS 26 and earlier clamp oversized items. Use the widest attached
+        // display and retain the system's 10,000-point upper bound.
+        let widestWidth = screenWidths.max() ?? 1728
+        return max(500, min(widestWidth * 2, 10_000))
+    }
 
     public static func areSeperatorPositionValid () -> StatusBarValidity {
         guard
@@ -113,6 +147,20 @@ class StatusBarController {
         NotificationCenter.default.addObserver(forName: NotificationNames.prefsChanged, object: nil, queue: Global.mainQueue) {[] (notification) in
             triggerAdjustment()
         }
+
+        NotificationCenter.default.addObserver(
+            forName: NSApplication.didChangeScreenParametersNotification,
+            object: nil,
+            queue: Global.mainQueue
+        ) { _ in
+            // The safe macOS 27 separator length is display-dependent, so
+            // re-apply the current state after a hot-plug/change. Repeat once
+            // after AppKit has settled the mirrored status-item positions.
+            triggerAdjustment()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                triggerAdjustment()
+            }
+        }
         
         // Manually adjusting the bar once
         triggerAdjustment()
@@ -143,6 +191,7 @@ class StatusBarController {
         lock.lock(before: Date(timeIntervalSinceNow: 1))
         primarySeprator.length = StatusBarController.normalSepratorLength
         secondarySeprator.length = StatusBarController.normalSepratorLength
+        setSeparatorGlyphsVisible(primary: true, secondary: true)
         masterToggle.button?.image = Assets.expandImage
         masterToggle.button?.title = "Invalid".localized
         lock.unlock()
@@ -180,6 +229,7 @@ class StatusBarController {
             lock = instance.updateLock
         
         lock.lock(before: Date(timeIntervalSinceNow: 1))
+        let expandedLength = StatusBarController.expandedSeperatorLength
         if Preferences.isEditMode {
             primarySeprator.length = StatusBarController.normalSepratorLength
             //primarySeprator.isVisible = true
@@ -187,6 +237,7 @@ class StatusBarController {
             //secondarySeprator.isVisible = true
             masterToggle.button?.image = Assets.expandImage
             masterToggle.button?.title = "Edit".localized
+            setSeparatorGlyphsVisible(primary: true, secondary: true)
             
         }
         else {
@@ -198,26 +249,35 @@ class StatusBarController {
                 //secondarySeprator.isVisible = false
                 masterToggle.button?.image = Assets.expandImage
                 masterToggle.button?.title = ""
+                setSeparatorGlyphsVisible(primary: true, secondary: true)
                 
             case .partialExpand:
                 primarySeprator.length = StatusBarController.hiddenSepratorLength
                 //primarySeprator.isVisible = false
-                secondarySeprator.length = StatusBarController.expandedSeperatorLength
+                secondarySeprator.length = expandedLength
                 //secondarySeprator.isVisible = true
                 masterToggle.button?.image = Assets.expandImage
                 masterToggle.button?.title = ""
+                setSeparatorGlyphsVisible(primary: true, secondary: false)
                 
             case .collapsed:
-                primarySeprator.length = StatusBarController.expandedSeperatorLength
+                primarySeprator.length = expandedLength
                 //primarySeprator.isVisible = true
-                secondarySeprator.length = StatusBarController.expandedSeperatorLength
+                secondarySeprator.length = expandedLength
                 //secondarySeprator.isVisible = true
                 masterToggle.button?.image = Assets.collapseImage
                 masterToggle.button?.title = ""
+                setSeparatorGlyphsVisible(primary: false, secondary: false)
                 
             }
         }
         lock.unlock()
+    }
+
+    private static func setSeparatorGlyphsVisible(primary: Bool, secondary: Bool) {
+        guard #available(macOS 27.0, *) else { return }
+        instance.primarySeprator.button?.image = primary ? Assets.seperatorImage : nil
+        instance.secondarySeprator.button?.image = secondary ? Assets.seperatorImage : nil
     }
 
     private static func adjustMenuBar () {
@@ -246,4 +306,3 @@ class StatusBarController {
         lock.unlock()
     }
 }
-

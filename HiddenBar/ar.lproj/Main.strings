@@ -70,8 +70,8 @@
 /* Class = "NSMenuItem"; title = "Hide Hidden Bar"; ObjectID = "Olw-nP-bQN"; */
 "Olw-nP-bQN.title" = "أخف الشريط المخفي";
 
-/* Class = "NSTextFieldCell"; title = "Follow us on Twitter"; ObjectID = "Tba-C7-Zr8"; */
-"Tba-C7-Zr8.title" = "تابعنا على تويتر";
+/* Class = "NSTextFieldCell"; title = "Project releases"; ObjectID = "Tba-C7-Zr8"; */
+"Tba-C7-Zr8.title" = "Project releases";
 
 /* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
 "Vdr-fp-XzO.title" = "أخف الآخرين";
@@ -82,14 +82,14 @@
 /* Class = "NSTextFieldCell"; title = "Menu bar cleaner"; ObjectID = "X4W-sr-Z32"; */
 "X4W-sr-Z32.title" = "منظف شريط القائمة";
 
-/* Class = "NSTextFieldCell"; title = "Know more about us"; ObjectID = "Xb1-xM-sYy"; */
-"Xb1-xM-sYy.title" = "إعرف المزيد عنا";
+/* Class = "NSTextFieldCell"; title = "Andrea Beghè"; ObjectID = "Xb1-xM-sYy"; */
+"Xb1-xM-sYy.title" = "Andrea Beghè";
 
 /* Class = "NSMenuItem"; title = "1 minute"; ObjectID = "Zkr-Xd-Ffh"; */
 "Zkr-Xd-Ffh.title" = "دقيقة واحدة";
 
-/* Class = "NSTextFieldCell"; title = "MIT © Dwarves Foundation"; ObjectID = "b1t-QR-iSj"; */
-"b1t-QR-iSj.title" = "MIT © Dwarves Foundation";
+/* Class = "NSTextFieldCell"; title = "MIT © Andrea Beghè"; ObjectID = "b1t-QR-iSj"; */
+"b1t-QR-iSj.title" = "MIT © Andrea Beghè";
 
 /* Class = "NSBox"; title = "Box"; ObjectID = "bFi-aV-ejJ"; */
 "bFi-aV-ejJ.title" = "صندوق";
@@ -103,8 +103,8 @@
 /* Class = "NSButtonCell"; title = "Set Shortcut"; ObjectID = "fc2-jD-QNf"; */
 "fc2-jD-QNf.title" = "عين اختصارا";
 
-/* Class = "NSTextFieldCell"; title = "This app is fully open source"; ObjectID = "fqc-io-QOP"; */
-"fqc-io-QOP.title" = "هذا التطبيق مفتوخ المصدر بالكامل";
+/* Class = "NSTextFieldCell"; title = "Open-source code"; ObjectID = "fqc-io-QOP"; */
+"fqc-io-QOP.title" = "Open-source code";
 
 /* Class = "NSButtonCell"; title = "Show preferences on launch"; ObjectID = "hCh-Ue-NgH"; */
 "hCh-Ue-NgH.title" = "إعرض التفضيلات عند بدء التشغيل";
@@ -127,8 +127,8 @@
 /* Class = "NSMenuItem"; title = "15 seconds"; ObjectID = "rdn-Xm-fZD"; */
 "rdn-Xm-fZD.title" = "١٥ ثانية";
 
-/* Class = "NSTextFieldCell"; title = "Email us"; ObjectID = "sRr-sO-uV0"; */
-"sRr-sO-uV0.title" = "راسلنا إلكنرونيا";
+/* Class = "NSTextFieldCell"; title = "Report an issue"; ObjectID = "sRr-sO-uV0"; */
+"sRr-sO-uV0.title" = "Report an issue";
 
 /* Class = "NSMenu"; title = "Hidden Bar"; ObjectID = "uQy-DD-JDr"; */
 "uQy-DD-JDr.title" = "الشريط المخفي";

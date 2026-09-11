@@ -257,13 +257,13 @@
                                                             </imageView>
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="F4l-p0-CZV" customClass="HyperlinkTextField" customModule="Hidden_Bar" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="4" width="204" height="16"/>
-                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Unoffical Maintenance Repositoy" id="2X9-xt-WLt">
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Project Repository" id="2X9-xt-WLt">
                                                                     <font key="font" metaFont="system"/>
                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://github.com/UeharaYou/HiddenBar"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://github.com/andybegh/HiddenBar-MacOS27"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                         </subviews>
@@ -278,7 +278,7 @@
                                                     </stackView>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sqd-np-PBZ">
                                                         <rect key="frame" x="23" y="32" width="186" height="16"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="This repository is an unofficial" id="O79-Ae-pp2">
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Maintained by Andrea Beghè" id="O79-Ae-pp2">
                                                             <font key="font" usesAppearanceFont="YES"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -286,7 +286,7 @@
                                                     </textField>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ioj-AA-tNz">
                                                         <rect key="frame" x="7" y="0.0" width="219" height="16"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="branch of Hidden Bar development." id="YDg-Sa-u5Z">
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="macOS 27 compatible edition." id="YDg-Sa-u5Z">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -323,13 +323,13 @@
                                                             </imageView>
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jmL-Oh-IlC" customClass="HyperlinkTextField" customModule="Hidden_Bar" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="4" width="128" height="16"/>
-                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Know more about us" id="Xb1-xM-sYy">
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Andrea Beghè" id="Xb1-xM-sYy">
                                                                     <font key="font" metaFont="system"/>
                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://dwarves.foundation/"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://github.com/andybegh"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                         </subviews>
@@ -351,17 +351,17 @@
                                                                     <constraint firstAttribute="height" constant="24" id="lfy-Or-pRi"/>
                                                                     <constraint firstAttribute="width" constant="24" id="urd-ld-QXS"/>
                                                                 </constraints>
-                                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ico_twitter" id="tB4-GY-gGd"/>
+                                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ico_github" id="tB4-GY-gGd"/>
                                                             </imageView>
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="c5D-4V-z75" customClass="HyperlinkTextField" customModule="Hidden_Bar" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="4" width="125" height="16"/>
-                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Follow us on Twitter" id="Tba-C7-Zr8">
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Project releases" id="Tba-C7-Zr8">
                                                                     <font key="font" metaFont="system"/>
                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://twitter.com/dwarvesf"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://github.com/andybegh/HiddenBar-MacOS27/releases"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                         </subviews>
@@ -387,13 +387,13 @@
                                                             </imageView>
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6si-3e-Hzw" customClass="HyperlinkTextField" customModule="Hidden_Bar" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="4" width="178" height="16"/>
-                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="This app is fully open source" id="fqc-io-QOP">
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Open-source code" id="fqc-io-QOP">
                                                                     <font key="font" metaFont="system"/>
                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://github.com/dwarvesf/hidden"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://github.com/andybegh/HiddenBar-MacOS27"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                         </subviews>
@@ -407,7 +407,7 @@
                                                         </customSpacing>
                                                     </stackView>
                                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="35p-hx-NQC">
-                                                        <rect key="frame" x="0.0" y="0.0" width="83" height="24"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="24"/>
                                                         <subviews>
                                                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QHX-Zb-2kW">
                                                                 <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -418,14 +418,14 @@
                                                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="ico_email" id="K3d-Co-Iq1"/>
                                                             </imageView>
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KzE-2n-Rp9" customClass="HyperlinkTextField" customModule="Hidden_Bar" customModuleProvider="target">
-                                                                <rect key="frame" x="30" y="4" width="55" height="16"/>
-                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Email us" id="sRr-sO-uV0">
+                                                                <rect key="frame" x="30" y="4" width="100" height="16"/>
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Report an issue" id="sRr-sO-uV0">
                                                                     <font key="font" metaFont="system"/>
                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="href" value="mailto:macos@d.foundation"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://github.com/andybegh/HiddenBar-MacOS27/issues"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                         </subviews>
@@ -466,7 +466,7 @@
                                     </stackView>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lhv-JW-S82">
                                         <rect key="frame" x="156" y="0.0" width="143" height="12"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="MIT © Dwarves Foundation" id="b1t-QR-iSj">
+                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="MIT © Andrea Beghè" id="b1t-QR-iSj">
                                             <font key="font" size="11" name="HelveticaNeue"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

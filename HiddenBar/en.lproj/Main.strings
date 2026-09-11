@@ -8,8 +8,8 @@
 /* Class = "NSTextFieldCell"; title = "Invisible"; ObjectID = "1jU-1x-cFf"; */
 "1jU-1x-cFf.title" = "Invisible";
 
-/* Class = "NSTextFieldCell"; title = "Unoffical Maintenance Repositoy"; ObjectID = "2X9-xt-WLt"; */
-"2X9-xt-WLt.title" = "Unoffical Maintenance Repositoy";
+/* Class = "NSTextFieldCell"; title = "Project Repository"; ObjectID = "2X9-xt-WLt"; */
+"2X9-xt-WLt.title" = "Project Repository";
 
 /* Class = "NSTextFieldCell"; title = "Hidden Bar"; ObjectID = "2xp-Ht-xa6"; */
 "2xp-Ht-xa6.title" = "Hidden Bar";
@@ -74,8 +74,8 @@
 /* Class = "NSMenuItem"; title = "Services"; ObjectID = "NMo-om-nkz"; */
 "NMo-om-nkz.title" = "Services";
 
-/* Class = "NSTextFieldCell"; title = "This repository is an unofficial"; ObjectID = "O79-Ae-pp2"; */
-"O79-Ae-pp2.title" = "This repository is an unofficial";
+/* Class = "NSTextFieldCell"; title = "Maintained by Andrea Beghè"; ObjectID = "O79-Ae-pp2"; */
+"O79-Ae-pp2.title" = "Maintained by Andrea Beghè";
 
 /* Class = "NSMenuItem"; title = "Hide Hidden Bar"; ObjectID = "Olw-nP-bQN"; */
 "Olw-nP-bQN.title" = "Hide Hidden Bar";
@@ -83,8 +83,8 @@
 /* Class = "NSMenuItem"; title = "Edit Mode"; ObjectID = "OmW-Mp-hRp"; */
 "OmW-Mp-hRp.title" = "Edit Mode";
 
-/* Class = "NSTextFieldCell"; title = "Follow us on Twitter"; ObjectID = "Tba-C7-Zr8"; */
-"Tba-C7-Zr8.title" = "Follow us on Twitter";
+/* Class = "NSTextFieldCell"; title = "Project releases"; ObjectID = "Tba-C7-Zr8"; */
+"Tba-C7-Zr8.title" = "Project releases";
 
 /* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
 "Vdr-fp-XzO.title" = "Hide Others";
@@ -95,17 +95,17 @@
 /* Class = "NSTextFieldCell"; title = "Menu bar cleaner"; ObjectID = "X4W-sr-Z32"; */
 "X4W-sr-Z32.title" = "Menu bar cleaner";
 
-/* Class = "NSTextFieldCell"; title = "Know more about us"; ObjectID = "Xb1-xM-sYy"; */
-"Xb1-xM-sYy.title" = "Know more about us";
+/* Class = "NSTextFieldCell"; title = "Andrea Beghè"; ObjectID = "Xb1-xM-sYy"; */
+"Xb1-xM-sYy.title" = "Andrea Beghè";
 
-/* Class = "NSTextFieldCell"; title = "branch of Hidden Bar development."; ObjectID = "YDg-Sa-u5Z"; */
-"YDg-Sa-u5Z.title" = "branch of Hidden Bar development.";
+/* Class = "NSTextFieldCell"; title = "macOS 27 compatible edition."; ObjectID = "YDg-Sa-u5Z"; */
+"YDg-Sa-u5Z.title" = "macOS 27 compatible edition.";
 
 /* Class = "NSMenuItem"; title = "1 minute"; ObjectID = "Zkr-Xd-Ffh"; */
 "Zkr-Xd-Ffh.title" = "1 minute";
 
-/* Class = "NSTextFieldCell"; title = "MIT © Dwarves Foundation"; ObjectID = "b1t-QR-iSj"; */
-"b1t-QR-iSj.title" = "MIT © Dwarves Foundation";
+/* Class = "NSTextFieldCell"; title = "MIT © Andrea Beghè"; ObjectID = "b1t-QR-iSj"; */
+"b1t-QR-iSj.title" = "MIT © Andrea Beghè";
 
 /* Class = "NSBox"; title = "Box"; ObjectID = "bFi-aV-ejJ"; */
 "bFi-aV-ejJ.title" = "Box";
@@ -119,8 +119,8 @@
 /* Class = "NSButtonCell"; title = "Set Shortcut"; ObjectID = "fc2-jD-QNf"; */
 "fc2-jD-QNf.title" = "Set Shortcut";
 
-/* Class = "NSTextFieldCell"; title = "This app is fully open source"; ObjectID = "fqc-io-QOP"; */
-"fqc-io-QOP.title" = "This app is fully open source";
+/* Class = "NSTextFieldCell"; title = "Open-source code"; ObjectID = "fqc-io-QOP"; */
+"fqc-io-QOP.title" = "Open-source code";
 
 /* Class = "NSMenu"; title = "Services"; ObjectID = "hz9-B4-Xy5"; */
 "hz9-B4-Xy5.title" = "Services";
@@ -143,8 +143,8 @@
 /* Class = "NSMenuItem"; title = "15 seconds"; ObjectID = "rdn-Xm-fZD"; */
 "rdn-Xm-fZD.title" = "15 seconds";
 
-/* Class = "NSTextFieldCell"; title = "Email us"; ObjectID = "sRr-sO-uV0"; */
-"sRr-sO-uV0.title" = "Email us";
+/* Class = "NSTextFieldCell"; title = "Report an issue"; ObjectID = "sRr-sO-uV0"; */
+"sRr-sO-uV0.title" = "Report an issue";
 
 /* Class = "NSMenu"; title = "Hidden Bar"; ObjectID = "uQy-DD-JDr"; */
 "uQy-DD-JDr.title" = "Hidden Bar";
