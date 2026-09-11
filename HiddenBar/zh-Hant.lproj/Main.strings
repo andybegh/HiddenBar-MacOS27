@@ -236,8 +236,8 @@
 /* Class = "NSMenuItem"; title = "Jump to Selection"; ObjectID = "S0p-oC-mLd"; */
 "S0p-oC-mLd.title" = "跳至所選範圍";
 
-/* Class = "NSTextFieldCell"; title = "Follow us on Twitter"; ObjectID = "Tba-C7-Zr8"; */
-"Tba-C7-Zr8.title" = "在 Twitter 追蹤我們";
+/* Class = "NSTextFieldCell"; title = "Project releases"; ObjectID = "Tba-C7-Zr8"; */
+"Tba-C7-Zr8.title" = "Project releases";
 
 /* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
 "Td7-aD-5lo.title" = "視窗";
@@ -272,8 +272,8 @@
 /* Class = "NSTextFieldCell"; title = "Menu bar cleaner"; ObjectID = "X4W-sr-Z32"; */
 "X4W-sr-Z32.title" = "選單列清道夫";
 
-/* Class = "NSTextFieldCell"; title = "Know more about us"; ObjectID = "Xb1-xM-sYy"; */
-"Xb1-xM-sYy.title" = "了解我們更多";
+/* Class = "NSTextFieldCell"; title = "Andrea Beghè"; ObjectID = "Xb1-xM-sYy"; */
+"Xb1-xM-sYy.title" = "Andrea Beghè";
 
 /* Class = "NSMenuItem"; title = "Find…"; ObjectID = "Xz5-n4-O0W"; */
 "Xz5-n4-O0W.title" = "尋找⋯";
@@ -308,8 +308,8 @@
 /* Class = "NSMenuItem"; title = "Use Default"; ObjectID = "agt-UL-0e3"; */
 "agt-UL-0e3.title" = "使用預設值";
 
-/* Class = "NSTextFieldCell"; title = "MIT © Dwarves Foundation"; ObjectID = "b1t-QR-iSj"; */
-"b1t-QR-iSj.title" = "MIT © Dwarves Foundation";
+/* Class = "NSTextFieldCell"; title = "MIT © Andrea Beghè"; ObjectID = "b1t-QR-iSj"; */
+"b1t-QR-iSj.title" = "MIT © Andrea Beghè";
 
 /* Class = "NSBox"; title = "Box"; ObjectID = "bFi-aV-ejJ"; */
 "bFi-aV-ejJ.title" = "方框";
@@ -356,8 +356,8 @@
 /* Class = "NSButtonCell"; title = "Set Shortcut"; ObjectID = "fc2-jD-QNf"; */
 "fc2-jD-QNf.title" = "設定快捷鍵";
 
-/* Class = "NSTextFieldCell"; title = "This app is fully open source"; ObjectID = "fqc-io-QOP"; */
-"fqc-io-QOP.title" = "這個 App 完全開源";
+/* Class = "NSTextFieldCell"; title = "Open-source code"; ObjectID = "fqc-io-QOP"; */
+"fqc-io-QOP.title" = "Open-source code";
 
 /* Class = "NSMenuItem"; title = "Paste"; ObjectID = "gVA-U4-sdL"; */
 "gVA-U4-sdL.title" = "貼上";
@@ -437,8 +437,8 @@
 /* Class = "NSMenuItem"; title = "Smart Dashes"; ObjectID = "rgM-f4-ycn"; */
 "rgM-f4-ycn.title" = "智慧型破折號";
 
-/* Class = "NSTextFieldCell"; title = "Email us"; ObjectID = "sRr-sO-uV0"; */
-"sRr-sO-uV0.title" = "用電子郵件聯絡我們";
+/* Class = "NSTextFieldCell"; title = "Report an issue"; ObjectID = "sRr-sO-uV0"; */
+"sRr-sO-uV0.title" = "Report an issue";
 
 /* Class = "NSMenuItem"; title = "Show Toolbar"; ObjectID = "snW-S8-Cw5"; */
 "snW-S8-Cw5.title" = "顯示工具列";

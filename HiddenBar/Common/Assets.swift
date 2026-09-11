@@ -2,8 +2,8 @@
 //  Assets.swift
 //  Hidden Bar
 //
-//  Created by Peter Luo on 2021/5/28.
-//  Copyright © 2021 Dwarves Foundation. All rights reserved.
+//  Maintained by Andrea Beghè in 2026.
+//  Copyright © 2026 Andrea Beghè. Licensed under the MIT License.
 //
 
 import AppKit

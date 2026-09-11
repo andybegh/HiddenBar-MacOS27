@@ -34,7 +34,6 @@
 		FB1660462A12CB2A008C6B3C /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1660452A12CB2A008C6B3C /* Main.swift */; };
 		FB1660812A12D3F4008C6B3C /* ProjectGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1660802A12D3F4008C6B3C /* ProjectGlobal.swift */; };
 		FB1660842A12E668008C6B3C /* ProductGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1660832A12E668008C6B3C /* ProductGlobal.swift */; };
-		FB63372E2A1D2961007527EE /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = FB63372D2A1D2961007527EE /* LaunchAtLogin */; };
 		FB6337332A1D5648007527EE /* HotKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6337322A1D5648007527EE /* HotKeyManager.swift */; };
 		FB71B0C72A153D6600D287CB /* Notification.Name+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB71B0C62A153D6600D287CB /* Notification.Name+Extension.swift */; };
 		FBE725F92A193D1000691AF3 /* ContextMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE725F82A193D1000691AF3 /* ContextMenuController.swift */; };
@@ -100,7 +99,6 @@
 			files = (
 				FB1660422A12A97E008C6B3C /* HotKey in Frameworks */,
 				92C5058121FEC2590084719A /* Cocoa.framework in Frameworks */,
-				FB63372E2A1D2961007527EE /* LaunchAtLogin in Frameworks */,
 				92C5057F21FEC24C0084719A /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,7 +235,6 @@
 				929113ED21F9D04100173149 /* Sources */,
 				929113EE21F9D04100173149 /* Frameworks */,
 				929113EF21F9D04100173149 /* Resources */,
-				FB63372F2A1D2A74007527EE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -246,9 +243,8 @@
 			name = "Hidden Bar";
 			packageProductDependencies = (
 				FB1660412A12A97E008C6B3C /* HotKey */,
-				FB63372D2A1D2961007527EE /* LaunchAtLogin */,
 			);
-			productName = vanillaClone;
+			productName = HiddenBar;
 			productReference = 929113F121F9D04100173149 /* Hidden Bar.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -261,7 +257,7 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
-				ORGANIZATIONNAME = "Dwarves Foundation";
+				ORGANIZATIONNAME = "Andrea Beghè";
 				TargetAttributes = {
 					929113F021F9D04100173149 = {
 						CreatedOnToolsVersion = 10.1;
@@ -293,7 +289,6 @@
 			mainGroup = 929113E821F9D04100173149;
 			packageReferences = (
 				FB1660402A12A97E008C6B3C /* XCRemoteSwiftPackageReference "HotKey" */,
-				FB63372C2A1D2961007527EE /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 			);
 			productRefGroup = 929113F221F9D04100173149 /* Products */;
 			projectDirPath = "";
@@ -316,27 +311,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		FB63372F2A1D2A74007527EE /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		929113ED21F9D04100173149 /* Sources */ = {
@@ -463,7 +437,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 27.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -521,7 +495,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 27.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -541,16 +515,16 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 14;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 47HK3524RN;
+				DEVELOPMENT_TEAM = 9P99M5KGL3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = HiddenBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MACOSX_DEPLOYMENT_TARGET = 27.0;
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = moe.ueharayou.MinimalBar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andybegh.HiddenBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -568,16 +542,16 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 14;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 47HK3524RN;
+				DEVELOPMENT_TEAM = 9P99M5KGL3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = HiddenBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				MACOSX_DEPLOYMENT_TARGET = 27.0;
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = moe.ueharayou.MinimalBar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andybegh.HiddenBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -612,16 +586,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/soffes/HotKey";
 			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		FB63372C2A1D2961007527EE /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
-			requirement = {
-				branch = main;
-				kind = branch;
+				kind = exactVersion;
+				version = 0.1.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -631,11 +597,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FB1660402A12A97E008C6B3C /* XCRemoteSwiftPackageReference "HotKey" */;
 			productName = HotKey;
-		};
-		FB63372D2A1D2961007527EE /* LaunchAtLogin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FB63372C2A1D2961007527EE /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
-			productName = LaunchAtLogin;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

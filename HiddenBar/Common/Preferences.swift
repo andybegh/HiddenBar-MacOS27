@@ -2,12 +2,12 @@
 //  UserDefault+Extension.swift
 //  Hidden Bar
 //
-//  Created by phucld on 12/18/19.
-//  Copyright © 2019 Dwarves Foundation. All rights reserved.
+//  Maintained by Andrea Beghè in 2026.
+//  Copyright © 2026 Andrea Beghè. Licensed under the MIT License.
 //
 
 import Foundation
-import LaunchAtLogin
+import ServiceManagement
 
 
 enum PreferenceKeys {
@@ -50,13 +50,31 @@ enum Preferences {
     
     static var isAutoStart: Bool {
         get {
-            return LaunchAtLogin.isEnabled
+            SMAppService.mainApp.status == .enabled
         }
         
         set {
-            LaunchAtLogin.isEnabled = newValue
+            do {
+                if newValue {
+                    if SMAppService.mainApp.status != .enabled {
+                        try SMAppService.mainApp.register()
+                    }
+                } else if SMAppService.mainApp.status != .notRegistered {
+                    try SMAppService.mainApp.unregister()
+                }
+            } catch {
+                NSLog("Auto-start update failed: \(error.localizedDescription)")
+            }
             NotificationCenter.default.post(Notification(name: NotificationNames.prefsChanged, object: Preferences.isAutoStart))
         }
+    }
+
+    // macOS 27 cannot apply one safe separator length to mirrored menu bars
+    // whose displays have different widths. This unsupported UI preference
+    // lets advanced users accept shifted icons on wider displays in exchange
+    // for hiding items on the narrowest display.
+    static var hideWithMixedDisplays: Bool {
+        UserDefaults.standard.bool(forKey: "hideWithMixedDisplays")
     }
     
     /*

@@ -125,3 +125,7 @@ DerivedData/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.gitignore.io/api/macos,swift
+
+# Local Codex build and delivery directories
+/work/
+/outputs/

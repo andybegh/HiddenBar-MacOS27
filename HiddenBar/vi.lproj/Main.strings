@@ -71,8 +71,8 @@
 /* Class = "NSMenuItem"; title = "Hide Hidden Bar"; ObjectID = "Olw-nP-bQN"; */
 "Olw-nP-bQN.title" = "Ẩn Hidden Bar";
 
-/* Class = "NSTextFieldCell"; title = "Follow us on Twitter"; ObjectID = "Tba-C7-Zr8"; */
-"Tba-C7-Zr8.title" = "Theo dõi chúng tôi trên Twitter";
+/* Class = "NSTextFieldCell"; title = "Project releases"; ObjectID = "Tba-C7-Zr8"; */
+"Tba-C7-Zr8.title" = "Project releases";
 
 /* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
 "Vdr-fp-XzO.title" = "Hide Others";
@@ -83,14 +83,14 @@
 /* Class = "NSTextFieldCell"; title = "Menu bar cleaner"; ObjectID = "X4W-sr-Z32"; */
 "X4W-sr-Z32.title" = "Menu bar cleaner";
 
-/* Class = "NSTextFieldCell"; title = "Know more about us"; ObjectID = "Xb1-xM-sYy"; */
-"Xb1-xM-sYy.title" = "Tìm hiểu thêm về chúng tôi";
+/* Class = "NSTextFieldCell"; title = "Andrea Beghè"; ObjectID = "Xb1-xM-sYy"; */
+"Xb1-xM-sYy.title" = "Andrea Beghè";
 
 /* Class = "NSMenuItem"; title = "1 minute"; ObjectID = "Zkr-Xd-Ffh"; */
 "Zkr-Xd-Ffh.title" = "1 phút";
 
-/* Class = "NSTextFieldCell"; title = "MIT © Dwarves Foundation"; ObjectID = "b1t-QR-iSj"; */
-"b1t-QR-iSj.title" = "MIT © Dwarves Foundation";
+/* Class = "NSTextFieldCell"; title = "MIT © Andrea Beghè"; ObjectID = "b1t-QR-iSj"; */
+"b1t-QR-iSj.title" = "MIT © Andrea Beghè";
 
 /* Class = "NSBox"; title = "Box"; ObjectID = "bFi-aV-ejJ"; */
 "bFi-aV-ejJ.title" = "Box";
@@ -104,8 +104,8 @@
 /* Class = "NSButtonCell"; title = "Set Shortcut"; ObjectID = "fc2-jD-QNf"; */
 "fc2-jD-QNf.title" = "Đặt phím tắt";
 
-/* Class = "NSTextFieldCell"; title = "This app is fully open source"; ObjectID = "fqc-io-QOP"; */
-"fqc-io-QOP.title" = "Đây là phần mềm mã nguồn mở";
+/* Class = "NSTextFieldCell"; title = "Open-source code"; ObjectID = "fqc-io-QOP"; */
+"fqc-io-QOP.title" = "Open-source code";
 
 /* Class = "NSButtonCell"; title = "Show preferences on launch"; ObjectID = "hCh-Ue-NgH"; */
 "hCh-Ue-NgH.title" = "Hiện tuỳ chọn lúc khởi chạy";
@@ -128,8 +128,8 @@
 /* Class = "NSMenuItem"; title = "15 seconds"; ObjectID = "rdn-Xm-fZD"; */
 "rdn-Xm-fZD.title" = "15 giây";
 
-/* Class = "NSTextFieldCell"; title = "Email us"; ObjectID = "sRr-sO-uV0"; */
-"sRr-sO-uV0.title" = "Email cho chúng tôi";
+/* Class = "NSTextFieldCell"; title = "Report an issue"; ObjectID = "sRr-sO-uV0"; */
+"sRr-sO-uV0.title" = "Report an issue";
 
 /* Class = "NSMenu"; title = "Hidden Bar"; ObjectID = "uQy-DD-JDr"; */
 "uQy-DD-JDr.title" = "Hidden Bar";

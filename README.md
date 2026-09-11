@@ -1,78 +1,54 @@
 <p align="center">
-	<img width="200" height="200" margin-right="100%" src="https://github.com/dwarvesf/hidden/blob/develop/img/icon_512%402x.png?raw=true">
+  <img width="200" height="200" src="img/icon_512%402x.png" alt="Hidden Bar icon">
 </p>
 <p align="center">
-	<a href="https://img.shields.io/badge/platform-macOS-lightgrey.svg">
- 		<img src="https://img.shields.io/badge/platform-macOS-lightgrey.svg" alt="platform">
-	</a>
-	<a href="https://img.shields.io/badge/requirements-macOS High Sierra+-ff69b4.svg">
- 		<img src="https://img.shields.io/badge/requirements-macOS High Sierra+-ff69b4.svg" alt="systemrequirements">
-	</a>
+  <img src="https://img.shields.io/badge/platform-macOS-lightgrey.svg" alt="platform">
+  <img src="https://img.shields.io/badge/requirements-macOS%20Golden%20Gate-ff69b4.svg" alt="macOS Golden Gate required">
 </p>
 
-## Hidden Bar (Unofficial Maintenance)
-Hidden Bar (Unofficial Maintenance) lets you hide menu bar items to give your Mac a cleaner look.
-This is an unofficial maintenance for the discontinued original [Hidden Bar](https://github.com/dwarvesf/hidden).
+# Hidden Bar for macOS 27
+
+Hide menu bar items and keep your Mac tidy. This edition is maintained by
+[Andrea Beghè](https://github.com/andybegh) for macOS 27 Golden Gate.
 
 <p align="center">
-	<img width="400" src="img/screen1.png">
-	<img width="400" src="img/screen2.png">
+  <img width="400" src="img/screen1.png" alt="Hidden Bar screenshot">
+  <img width="400" src="img/screen2.png" alt="Hidden Bar preferences">
 </p>
 
-## 🚀 Install
+## Download
 
-###  App Store
+[Download HiddenBar-MacOS27.zip](https://github.com/andybegh/HiddenBar-MacOS27/releases/latest/download/HiddenBar-MacOS27.zip)
 
-This verison of Hidden Bar is not available on the App Store.
+The app is distributed without Apple notarization. macOS may request confirmation
+the first time it is opened.
 
-Original Version (v1.8): [![AppStore](img/appstore.svg)](https://itunes.apple.com/app/hidden-bar/id1452453066)
+## Usage
 
-### Pre-built Packages
+- Hold `⌘` and drag to arrange menu bar items.
+- Click the arrow to hide or reveal them.
 
-This version of Hidden Bar is NOT notarized. The GateKeeper will flag any non-notarized App as Untrusted and therefore prevent it from opening. Although you can override GateKeeper's decision, it is considered a bad habit while using your computer. Besides notarizing an app requires enrollments of Apple Developer Program, which currently is not the case for me. Therefore NO pre-built packages available.
+## Build from source
 
-To test this version of Hidden Bar, you have to build it from source, which means you might also inspect the code yourself.
+Open `Hidden Bar.xcodeproj` in Xcode, select your development team, then build
+the `Hidden Bar` scheme.
 
-For packages of the original Hidden Bar (up to v1.9), check out the original repo [here](https://github.com/dwarvesf/hidden).
+## Compatibility
 
-#### Build from Source
+Requires macOS 27 Golden Gate. Mixed-width multi-display setups are disabled by
+default because macOS assigns the same status-item width to every mirrored menu
+bar. To enable the narrowest-display workaround:
 
-To build this version of Hidden Bar, you have to have Xcode installed.
+```shell
+defaults write com.andybegh.HiddenBar hideWithMixedDisplays -bool true
+```
 
-1. Import the project into Xcode.
-2. Reslove the team certificate error. You have to sign your own copies yourself with your own cert. It is not necessary to be a member of Apple Developer Program to build this project.
-3. Build the project in Xcode.
+## Contributing
 
-## 🕹 Usage
-
-CAUTION: The usage of version of Hidden Bar is slightly different from the original one.
-
-* `⌘` + drag to move the Hidden icons around in the menu bar.
-* Click the Arrow icon to hide menu bar items.
-
-For more usage info, click the Help button in the Settings interfaces.
-
-<p align="center">
-	<img src="img/tutorial.gif">
-</p>
-
-## ✨<a href="https://github.com/dwarvesf/hidden/graphs/contributors">Contributions</a>
-
-Please read [this](CONTRIBUTING.md) before you make a contribution.
-
-### Unofficial Maintenance Acknowledgements
-
-Sincere gratitudes towards all contributors of the original Hidden Bar for your previous works.
-
-### Original Acknowledgements
-
-This project exists thanks to all the people who contribute. Thank you guys so much 👏
-
-[![](https://sourcerer.io/fame/phucledien/dwarvesf/hidden/images/0)](https://sourcerer.io/fame/phucledien/dwarvesf/hidden/links/0)[![](https://sourcerer.io/fame/phucledien/dwarvesf/hidden/images/1)](https://sourcerer.io/fame/phucledien/dwarvesf/hidden/links/1)[![](https://sourcerer.io/fame/phucledien/dwarvesf/hidden/images/2)](https://sourcerer.io/fame/phucledien/dwarvesf/hidden/links/2)[![](https://sourcerer.io/fame/phucledien/dwarvesf/hidden/images/3)](https://sourcerer.io/fame/phucledien/dwarvesf/hidden/links/3)[![](https://sourcerer.io/fame/phucledien/dwarvesf/hidden/images/4)](https://sourcerer.io/fame/phucledien/dwarvesf/hidden/links/4)[![](https://sourcerer.io/fame/phucledien/dwarvesf/hidden/images/5)](https://sourcerer.io/fame/phucledien/dwarvesf/hidden/links/5)[![](https://sourcerer.io/fame/phucledien/dwarvesf/hidden/images/6)](https://sourcerer.io/fame/phucledien/dwarvesf/hidden/links/6)[![](https://sourcerer.io/fame/phucledien/dwarvesf/hidden/images/7)](https://sourcerer.io/fame/phucledien/dwarvesf/hidden/links/7)
-
-## Requirements
-macOS version >= 10.13
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before contributing.
 
 ## License
 
-MIT &copy; [UeharaYou](https://github.com/UeharaYou); original: [Dwarves Foundation](https://github.com/dwarvesf)
+MIT © 2026 Andrea Beghè. See [LICENSE](LICENSE) for the full license and required
+notices from earlier versions. Third-party notices are in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

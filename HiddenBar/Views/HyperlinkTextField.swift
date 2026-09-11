@@ -2,8 +2,8 @@
 //  HyperlinkTextField.swift
 //  Hidden Bar
 //
-//  Created by phucld on 12/19/19.
-//  Copyright © 2019 Dwarves Foundation. All rights reserved.
+//  Maintained by Andrea Beghè in 2026.
+//  Copyright © 2026 Andrea Beghè. Licensed under the MIT License.
 //
 
 import Foundation
