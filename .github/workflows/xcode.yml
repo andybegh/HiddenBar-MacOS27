@@ -21,6 +21,7 @@ jobs:
             -project "Hidden Bar.xcodeproj" \
             -scheme "Hidden Bar" \
             -configuration Release \
+            CONFIGURATION_BUILD_DIR="$PWD/build/Release" \
             CODE_SIGNING_ALLOWED=NO \
             ARCHS=arm64 \
             ONLY_ACTIVE_ARCH=YES
