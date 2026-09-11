@@ -23,6 +23,11 @@ Hide menu bar items and keep your Mac tidy. This edition is maintained by
 The app is distributed without Apple notarization. macOS may request confirmation
 the first time it is opened.
 
+## Support this fork
+
+If this macOS 27 edition is useful to you, you can support Andrea Beghè's work
+maintaining this fork on [Buy Me a Coffee](https://buymeacoffee.com/andybegh).
+
 ## Usage
 
 - Hold `⌘` and drag to arrange menu bar items.
