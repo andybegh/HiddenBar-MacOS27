@@ -45,7 +45,6 @@ class PreferencesViewController: NSViewController {
         super.viewDidLoad()
         updateData()
         loadHotkey()
-        createTutorialView()
 
         NotificationCenter.default.addObserver(forName: NotificationNames.prefsChanged, object: nil, queue: nil) {
             [weak self] notification in
@@ -53,6 +52,17 @@ class PreferencesViewController: NSViewController {
             target.updateData()
         }
         
+    }
+
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        if #available(macOS 27.0, *) {
+            // Changing an arranged view inside this legacy fill-equally stack
+            // still produces invalid intermediate geometry in AppKit 27. The
+            // storyboard value is intentionally left untouched on this OS.
+        } else {
+            updateTutorialDate()
+        }
     }
     
     static func initWithStoryboard() -> PreferencesViewController {
@@ -176,49 +186,15 @@ class PreferencesViewController: NSViewController {
         btnClear.isEnabled = globalKeybindPreference != nil
     }
     
-    func createTutorialView() {
-        lblAlwayHidden.isHidden = false
-        arrowPointToAlwayHiddenImage.isHidden = false
-        statusBarStackView.removeAllSubViews()
-        let imageWidth: CGFloat = 16
-        
-        
-        let images = ["ico_1","ico_2","ico_3","ico_4", "seprated_1","ico_5","ico_6","seprated", "ico_collapse","ico_7"].map { imageName in
-            NSImageView(image: NSImage(named: imageName)!)
+    private func updateTutorialDate() {
+        // The complete tutorial is laid out in Main.storyboard. Rebuilding its
+        // fill-equally stack at runtime caused transient negative view sizes on
+        // macOS 27. Only the final date/time label needs dynamic content.
+        guard let dateTimeLabel = statusBarStackView.arrangedSubviews.last as? NSTextField else {
+            return
         }
-        
-        
-        for image in images {
-            statusBarStackView.addArrangedSubview(image)
-            image.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                image.widthAnchor.constraint(equalToConstant: imageWidth),
-                image.heightAnchor.constraint(equalToConstant: imageWidth)
-                
-            ])
-            if #available(OSX 10.14, *) {
-                image.contentTintColor = .labelColor
-            } else {
-                // Fallback on earlier versions
-            }
-        }
-        let dateTimeLabel = NSTextField()
+
         dateTimeLabel.stringValue = Date.dateString() + " " + Date.timeString()
-        dateTimeLabel.translatesAutoresizingMaskIntoConstraints = false
-        dateTimeLabel.isBezeled = false
-        dateTimeLabel.isEditable = false
-        dateTimeLabel.sizeToFit()
-        dateTimeLabel.backgroundColor = .clear
-        statusBarStackView.addArrangedSubview(dateTimeLabel)
-        NSLayoutConstraint.activate([dateTimeLabel.heightAnchor.constraint(equalToConstant: imageWidth)
-        ])
-        
-        NSLayoutConstraint.activate([
-            arrowPointToAlwayHiddenImage.centerXAnchor.constraint(equalTo: statusBarStackView.arrangedSubviews[4].centerXAnchor)
-        ])
-        NSLayoutConstraint.activate([
-            arrowPointToHiddenImage.centerXAnchor.constraint(equalTo: statusBarStackView.arrangedSubviews[7].centerXAnchor)
-        ])
     }
      
     @IBAction func btnAlwayHiddenHelpPressed(_ sender: NSButton) {
@@ -227,26 +203,24 @@ class PreferencesViewController: NSViewController {
     
     private func showHowToUseAlwayHiddenPopover(sender: NSButton) {
         let controller = NSViewController()
-        let label = NSTextField()
+        let label = NSTextField(wrappingLabelWithString: "")
         let text = NSLocalizedString("Tutorial text", comment: "Step by step tutorial")
         
         label.stringValue = text
-        label.isBezeled = false
-        label.isEditable = false
         let view = NSView()
         view.addSubview(label)
         NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: view.topAnchor),
-            label.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            label.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            label.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            label.topAnchor.constraint(equalTo: view.topAnchor, constant: 12),
+            label.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -12),
+            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
+            label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12)
         ])
         label.translatesAutoresizingMaskIntoConstraints = false
         controller.view = view
         
         let popover = NSPopover()
         popover.contentViewController = controller
-        popover.contentSize = controller.view.frame.size
+        popover.contentSize = NSSize(width: 320, height: 120)
         
         popover.behavior = .transient
         popover.animates = true

@@ -24,8 +24,17 @@ class StatusBarController {
     private let updateLock = NSLock()
     private var autoCollapseTimer: Timer? = nil
     
-    private static let hiddenSepratorLength: CGFloat =  0
     private static let normalSepratorLength: CGFloat =  10
+    private static var hiddenSepratorLength: CGFloat {
+        if #available(macOS 27.0, *) {
+            // A zero-width NSStatusItem produces negative internal AppKit
+            // geometry on macOS 27. Keep the smallest proven-safe allocation;
+            // the separator glyph can still be hidden independently.
+            return normalSepratorLength
+        }
+
+        return 0
+    }
     private static var expandedSeperatorLength: CGFloat {
         let screenWidths = NSScreen.screens.map { $0.frame.width }
 
@@ -125,6 +134,17 @@ class StatusBarController {
             // A fixed allocation prevents the variable-length item from
             // collapsing to zero while AppKit restores managed status items.
             masterToggle.length = NSStatusItem.squareLength
+
+            // Setting autosaveName to nil clears saved visibility according to
+            // AppKit. This prevents a status item hidden by an earlier install
+            // from remaining unreachable after the upgrade.
+            masterToggle.autosaveName = nil
+            primarySeprator.autosaveName = nil
+            secondarySeprator.autosaveName = nil
+        } else {
+            masterToggle.autosaveName = "hiddenbar_masterToggle"
+            primarySeprator.autosaveName = "hiddenbar_primarySeprator"
+            secondarySeprator.autosaveName = "hiddenbar_secondarySeprator"
         }
         
         if let button = primarySeprator.button {
@@ -135,9 +155,6 @@ class StatusBarController {
             button.image = Assets.seperatorImage
             button.appearsDisabled = true
         }
-        masterToggle.autosaveName = "hiddenbar_masterToggle";
-        primarySeprator.autosaveName = "hiddenbar_primarySeprator";
-        secondarySeprator.autosaveName = "hiddenbar_secondarySeprator";
         NSLog("Status bar controller inited.")
     }
     
