@@ -48,6 +48,10 @@ bar. To enable the narrowest-display workaround:
 defaults write com.andybegh.HiddenBar hideWithMixedDisplays -bool true
 ```
 
+On macOS 27 the app also keeps a Dock icon and opens Preferences at launch. This
+provides a recovery path when the system hides a managed menu bar item or the menu
+bar has insufficient space.
+
 ## Contributing
 
 Read [CONTRIBUTING.md](CONTRIBUTING.md) before contributing.

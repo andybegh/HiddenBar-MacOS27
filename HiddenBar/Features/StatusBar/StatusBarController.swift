@@ -108,6 +108,23 @@ class StatusBarController {
     private init() {
         if let button = masterToggle.button {
             button.image = Assets.collapseImage
+            button.image?.isTemplate = true
+            button.imageScaling = .scaleProportionallyDown
+            button.toolTip = "Hidden Bar"
+            button.setAccessibilityLabel("Hidden Bar")
+
+            if button.image == nil {
+                button.title = Global.isUsingLTRTypeSystem ? "‹" : "›"
+                button.imagePosition = .noImage
+            } else {
+                button.imagePosition = .imageOnly
+            }
+        }
+
+        if #available(macOS 27.0, *) {
+            // A fixed allocation prevents the variable-length item from
+            // collapsing to zero while AppKit restores managed status items.
+            masterToggle.length = NSStatusItem.squareLength
         }
         
         if let button = primarySeprator.button {
@@ -281,6 +298,13 @@ class StatusBarController {
     }
 
     private static func adjustMenuBar () {
+        if #available(macOS 27.0, *) {
+            // Status items can be hidden by the system or because the menu bar
+            // has insufficient space. A regular activation policy keeps the
+            // Preferences window reachable from the Dock in either case.
+            NSApp.setActivationPolicy(.regular)
+            return
+        }
         
         //TODO: do not deactivate if preference window is shown
         let lock = instance.updateLock
