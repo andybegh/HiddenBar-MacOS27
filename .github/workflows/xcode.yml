@@ -25,6 +25,14 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             ARCHS=arm64 \
             ONLY_ACTIVE_ARCH=YES
+      - name: Verify app bundle
+        run: |
+          app="build/Release/Hidden Bar.app"
+          test -x "$app/Contents/MacOS/Hidden Bar"
+          test "$(plutil -extract CFBundleIdentifier raw "$app/Contents/Info.plist")" = "com.andybegh.HiddenBar"
+          test "$(plutil -extract CFBundleShortVersionString raw "$app/Contents/Info.plist")" = "2.0.1"
+          test "$(plutil -extract LSMinimumSystemVersion raw "$app/Contents/Info.plist")" = "27.0"
+          test "$(plutil -extract LSUIElement raw "$app/Contents/Info.plist")" = "false"
       - name: Package app
         run: |
           ditto -c -k --sequesterRsrc --keepParent \

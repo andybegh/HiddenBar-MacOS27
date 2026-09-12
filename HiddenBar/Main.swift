@@ -11,9 +11,17 @@ import AppKit
 @main struct MyApp {
     
     static func main () -> Void {
-        // Check for duplicated instances.
+        // Prevent launching the same app bundle twice, while allowing a newer
+        // copy from another location to replace or diagnose an installed copy.
+        let currentBundleURL = Bundle.main.bundleURL.resolvingSymlinksInPath()
         let otherRunningInstances = NSWorkspace.shared.runningApplications.filter {
-            $0.bundleIdentifier == Global.mainAppId && $0 != NSRunningApplication.current
+            guard
+                $0.bundleIdentifier == Global.mainAppId,
+                $0 != NSRunningApplication.current,
+                let bundleURL = $0.bundleURL?.resolvingSymlinksInPath()
+            else { return false }
+
+            return bundleURL == currentBundleURL
         }
         let isAppAlreadyRunning = !otherRunningInstances.isEmpty
         

@@ -24,8 +24,17 @@ class StatusBarController {
     private let updateLock = NSLock()
     private var autoCollapseTimer: Timer? = nil
     
-    private static let hiddenSepratorLength: CGFloat =  0
     private static let normalSepratorLength: CGFloat =  10
+    private static var hiddenSepratorLength: CGFloat {
+        if #available(macOS 27.0, *) {
+            // A zero-width NSStatusItem produces negative internal AppKit
+            // geometry on macOS 27. Keep the smallest proven-safe allocation;
+            // the separator glyph can still be hidden independently.
+            return normalSepratorLength
+        }
+
+        return 0
+    }
     private static var expandedSeperatorLength: CGFloat {
         let screenWidths = NSScreen.screens.map { $0.frame.width }
 
@@ -67,10 +76,22 @@ class StatusBarController {
             let toggleButtonX = instance.masterToggle.button?.getOrigin?.x,
             let primarySepratorX = instance.primarySeprator.button?.getOrigin?.x,
             let secondarySepratorX = instance.secondarySeprator.button?.getOrigin?.x
-        else {return .invalid}
+        else {
+            // Managed status items may not expose a window immediately on
+            // macOS 27. Retry instead of showing the legacy "Invalid" state.
+            if #available(macOS 27.0, *) { return .onStartUp }
+            return .invalid
+        }
         
         // all x will be 0 if applicationDidFinishLaunching have not returned, so we have to try again
         if toggleButtonX == 0 && primarySepratorX == 0 && secondarySepratorX == 0 {return .onStartUp}
+
+        if #available(macOS 27.0, *) {
+            // AppKit 27 manages the visual ordering of status items and can
+            // report positions that do not match their creation order. The
+            // legacy comparison therefore produces a false "Invalid" state.
+            return .valid
+        }
         
         if Global.isUsingLTRTypeSystem {
             return (toggleButtonX > primarySepratorX && primarySepratorX > secondarySepratorX) ? .valid : .invalid
@@ -108,6 +129,34 @@ class StatusBarController {
     private init() {
         if let button = masterToggle.button {
             button.image = Assets.collapseImage
+            button.image?.isTemplate = true
+            button.imageScaling = .scaleProportionallyDown
+            button.toolTip = "Hidden Bar"
+            button.setAccessibilityLabel("Hidden Bar")
+
+            if button.image == nil {
+                button.title = Global.isUsingLTRTypeSystem ? "‹" : "›"
+                button.imagePosition = .noImage
+            } else {
+                button.imagePosition = .imageOnly
+            }
+        }
+
+        if #available(macOS 27.0, *) {
+            // A fixed allocation prevents the variable-length item from
+            // collapsing to zero while AppKit restores managed status items.
+            masterToggle.length = NSStatusItem.squareLength
+
+            // Setting autosaveName to nil clears saved visibility according to
+            // AppKit. This prevents a status item hidden by an earlier install
+            // from remaining unreachable after the upgrade.
+            masterToggle.autosaveName = nil
+            primarySeprator.autosaveName = nil
+            secondarySeprator.autosaveName = nil
+        } else {
+            masterToggle.autosaveName = "hiddenbar_masterToggle"
+            primarySeprator.autosaveName = "hiddenbar_primarySeprator"
+            secondarySeprator.autosaveName = "hiddenbar_secondarySeprator"
         }
         
         if let button = primarySeprator.button {
@@ -118,9 +167,6 @@ class StatusBarController {
             button.image = Assets.seperatorImage
             button.appearsDisabled = true
         }
-        masterToggle.autosaveName = "hiddenbar_masterToggle";
-        primarySeprator.autosaveName = "hiddenbar_primarySeprator";
-        secondarySeprator.autosaveName = "hiddenbar_secondarySeprator";
         NSLog("Status bar controller inited.")
     }
     
@@ -192,8 +238,15 @@ class StatusBarController {
         primarySeprator.length = StatusBarController.normalSepratorLength
         secondarySeprator.length = StatusBarController.normalSepratorLength
         setSeparatorGlyphsVisible(primary: true, secondary: true)
-        masterToggle.button?.image = Assets.expandImage
-        masterToggle.button?.title = "Invalid".localized
+        if #available(macOS 27.0, *) {
+            // Keep the recovery control usable even if AppKit temporarily
+            // withholds status-item position information.
+            masterToggle.button?.image = Assets.collapseImage
+            masterToggle.button?.title = ""
+        } else {
+            masterToggle.button?.image = Assets.expandImage
+            masterToggle.button?.title = "Invalid".localized
+        }
         lock.unlock()
     }
     
@@ -281,6 +334,13 @@ class StatusBarController {
     }
 
     private static func adjustMenuBar () {
+        if #available(macOS 27.0, *) {
+            // Status items can be hidden by the system or because the menu bar
+            // has insufficient space. A regular activation policy keeps the
+            // Preferences window reachable from the Dock in either case.
+            NSApp.setActivationPolicy(.regular)
+            return
+        }
         
         //TODO: do not deactivate if preference window is shown
         let lock = instance.updateLock
