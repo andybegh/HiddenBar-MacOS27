@@ -76,10 +76,22 @@ class StatusBarController {
             let toggleButtonX = instance.masterToggle.button?.getOrigin?.x,
             let primarySepratorX = instance.primarySeprator.button?.getOrigin?.x,
             let secondarySepratorX = instance.secondarySeprator.button?.getOrigin?.x
-        else {return .invalid}
+        else {
+            // Managed status items may not expose a window immediately on
+            // macOS 27. Retry instead of showing the legacy "Invalid" state.
+            if #available(macOS 27.0, *) { return .onStartUp }
+            return .invalid
+        }
         
         // all x will be 0 if applicationDidFinishLaunching have not returned, so we have to try again
         if toggleButtonX == 0 && primarySepratorX == 0 && secondarySepratorX == 0 {return .onStartUp}
+
+        if #available(macOS 27.0, *) {
+            // AppKit 27 manages the visual ordering of status items and can
+            // report positions that do not match their creation order. The
+            // legacy comparison therefore produces a false "Invalid" state.
+            return .valid
+        }
         
         if Global.isUsingLTRTypeSystem {
             return (toggleButtonX > primarySepratorX && primarySepratorX > secondarySepratorX) ? .valid : .invalid
@@ -226,8 +238,15 @@ class StatusBarController {
         primarySeprator.length = StatusBarController.normalSepratorLength
         secondarySeprator.length = StatusBarController.normalSepratorLength
         setSeparatorGlyphsVisible(primary: true, secondary: true)
-        masterToggle.button?.image = Assets.expandImage
-        masterToggle.button?.title = "Invalid".localized
+        if #available(macOS 27.0, *) {
+            // Keep the recovery control usable even if AppKit temporarily
+            // withholds status-item position information.
+            masterToggle.button?.image = Assets.collapseImage
+            masterToggle.button?.title = ""
+        } else {
+            masterToggle.button?.image = Assets.expandImage
+            masterToggle.button?.title = "Invalid".localized
+        }
         lock.unlock()
     }
     
